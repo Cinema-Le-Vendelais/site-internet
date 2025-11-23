@@ -1,0 +1,195 @@
+[
+    {
+        "title": "Accueil",
+        "menu": true,
+        "menuIndex": 0,
+        "mobile": true,
+        "icon": "home",
+        "url": "",
+        "path": "accueil.php",
+        "scripts": [
+            "https://unpkg.com/lunr/lunr.min.js",
+            "https://cdn.jsdelivr.net/npm/sweetalert2@11",
+            "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js",
+            "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js",
+            "https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.4.0/color-thief.min.js",
+            "https://unpkg.com/@popperjs/core@2",
+            "https://unpkg.com/tippy.js@6"
+
+        ],
+        "styles": [
+            "https://cdn.levendelaiscinema.fr/v2/css/main.css?v=0.0.8",
+            "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css",
+            "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        ],
+        "footerScripts": ["https://cdn.levendelaiscinema.fr/v3/js/public/main.js?v=0.1.9"]
+    },
+    {
+        "title": "Programme",
+        "menu": true,
+        "menuIndex": 1,
+        "mobile": true,
+        "icon": "calendar",
+        "url": "programme",
+        "path": "programme.php",
+        "styles": ["https://cdn.levendelaiscinema.fr/v2/css/programme.css"],
+        "footerScripts": ["https://cdn.levendelaiscinema.fr/v3/js/public/programme.js?v=0.0.2"]
+    },
+    {
+        "title": "Infos pratiques",
+        "menu": true,
+        "mobile": true,
+        "short_name": "Infos",
+        "menuIndex": 2,
+        "icon": "question",
+        "url": "infos",
+        "type": "model",
+        "slug": "page_infos",
+        "styles": ["https://cdn.levendelaiscinema.fr/v1/css/infos.css"]
+    },
+    {
+        "title": "Infos pratiques",
+        "url": "infos-pratiques",
+        "type": "model",
+        "slug": "page_infos",
+        "styles": ["https://cdn.levendelaiscinema.fr/v1/css/infos.css"]
+    },
+    {
+        "title": "Portail bénévoles",
+        "url": "portail",
+        "path": "portail.php"
+    },
+    {
+        "title": "Affiches",
+        "menu": true,
+        "menuIndex": 3,
+        "mobile": true,
+        "short_name": "Affiches",
+        "icon": "image",
+        "url": "affiches",
+        "path": "affiches.php",
+        "styles": ["https://cdn.levendelaiscinema.fr/v3/css/public/affiches.css"],
+        "scripts": ["https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js", "https://cdn.jsdelivr.net/npm/sweetalert2@11"],
+        "footerScripts": ["https://cdn.levendelaiscinema.fr/v3/js/public/affiches.js"]
+    },
+    {
+        "title": "Notre histoire",
+        "menu": true,
+        "menuIndex": 4,
+        "url": "notre-histoire",
+        "type": "model",
+        "slug": "page_histoire",
+        "scripts": ["https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"]
+    },
+    {
+        "title": "Nous contacter",
+        "menu": true,
+        "menuIndex": 5,
+        "short_name": "Contacter",
+        "mobile": true,
+        "icon": "phone",
+        "url": "contacter",
+        "path": "contacter.php",
+        "accent": true,
+        "styles": ["https://cdn.levendelaiscinema.fr/v2/css/contact.css?v=1.0.0"]
+    },
+
+    {
+        "url": "rss",
+        "path": "rss.php",
+        "includes": false
+    },
+
+    {
+        "title": "Mentions légales",
+        "legal": true,
+        "url": "mentions-legales",
+        "path": "legal/mentions.php"
+    },
+    {
+        "title": "Politique de cookies",
+        "legal": true,
+        "url": "about-cookies",
+        "path": "legal/cookies.php"
+    },
+    {
+        "title": "Politique de confidentialité",
+        "legal": true,
+        "url": "about-data",
+        "path": "legal/donnees.php"
+    },
+
+    {
+        "title": "Empreinte carbone",
+        "url": "carbon-footprint",
+        "path": "carbon.php"
+    },
+
+    {
+        "title": "Charte graphique",
+        "url": "charte-graphique",
+        "path": "charte.php"
+    },
+
+    {
+        "title": "Film",
+        "url": "film/*",
+        "path": "film.php",
+        "styles": ["https://cdn.levendelaiscinema.fr/v3/css/public/film.css?v=0.0.6"],
+        "scripts": ["https://cdn.jsdelivr.net/npm/sweetalert2@11"],
+        "footerScripts": ["https://cdn.levendelaiscinema.fr/v3/js/public/film.js?v=0.1.0"]
+    },
+    {
+        "title": "Évènement",
+        "url": "event/*",
+        "isEmpty": true,
+        "styles": ["https://cdn.levendelaiscinema.fr/v3/css/public/event.css"],
+        "footerScripts": ["https://cdn.levendelaiscinema.fr/v1/js/pages/event.js"]
+    },
+
+    {
+        "title": "Inscription",
+        "url": "newsletter/subscribe",
+        "path": "newsletter/subscribe.php",
+        "styles": ["https://cdn.levendelaiscinema.fr/v2/css/contact.css"],
+        "scripts": ["https://challenges.cloudflare.com/turnstile/v0/api.js", "https://cdn.jsdelivr.net/npm/sweetalert2@11"]
+    },
+    {
+        "title": "Valider",
+        "url": "newsletter/validate",
+        "path": "newsletter/validate.php",
+        "styles": ["https://cdn.levendelaiscinema.fr/v2/css/contact.css"],
+        "scripts": ["https://challenges.cloudflare.com/turnstile/v0/api.js"]
+    },
+    {
+        "title": "Désinscription",
+        "url": "newsletter/unsubscribe",
+        "path": "newsletter/unsubscribe.php"
+    },
+    {
+        "title": "Redirection...",
+        "url": "redirect.php",
+        "path": "applications/redirect.php",
+        "includes": false
+    },
+    {
+        "title": "Sondage",
+        "url": "survey/*/post",
+        "path": "surveys/post.php",
+        "includes": false
+    },
+    {
+        "title": "Sondage",
+        "url": "survey/*/results",
+        "path": "surveys/results.php",
+        "styles": ["https://unpkg.com/survey-analytics/survey.analytics.min.css"],
+        "scripts": ["https://unpkg.com/survey-core/survey.core.min.js", "https://unpkg.com/plotly.js-dist-min/plotly.min.js", "https://unpkg.com/survey-analytics/survey.analytics.min.js", "https://unpkg.com/survey-core/i18n/french.js"]
+    },
+    {
+        "title": "Sondage",
+        "url": "survey/*",
+        "path": "surveys/survey.php",
+        "styles": ["https://unpkg.com/survey-core/survey-core.min.css"],
+        "scripts": ["https://unpkg.com/survey-core/survey.core.min.js", "https://unpkg.com/survey-js-ui/survey-js-ui.min.js", "https://challenges.cloudflare.com/turnstile/v0/api.js", "https://unpkg.com/survey-core/i18n/french.js", "https://cdn.jsdelivr.net/npm/sweetalert2@11"]
+    }
+]

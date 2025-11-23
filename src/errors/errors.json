@@ -1,0 +1,12 @@
+{
+    "1006": {
+        "name": "Fichier introuvable",
+        "description": "Fichier de configuration pages.json invalide. Le fichier %file est introuvable lors de l'accès à la page %page",
+        "code": "ERR_CONFIG_FILE_NOT_FOUND"
+    },
+    "1007": {
+        "name": "Modèle introuvable",
+        "description": "Fichier de configuration pages.json invalide. Le modèle %model est introuvable lors de l'accès à la page %page",
+        "code": "ERR_CONFIG_MODEL_NOT_FOUND"
+    }
+}
