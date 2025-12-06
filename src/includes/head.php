@@ -28,18 +28,18 @@ programme cinéma châtillon, programme cinema vitré, programme cinéma, ciném
 
     <!-- STYLESHEETS -->
 
-    <link rel="preload" href='<?= loadCdnUrl("v2/css/style.css") ?>?v=0.0.16' as="style" onload="this.rel='stylesheet'"'>
+    <link rel="preload" href='<?= asset("cdn://styles/public/style.css") ?>' as="style" onload="this.rel='stylesheet'"'>
 
     <!-- GLOBAL REQUIREMENTS -->
 
-    <link rel="preload" href="<?= loadCdnUrl("v2/3rdparty/fontawesome/css/all.min.css") ?>" as="style" onload="this.rel='stylesheet'"'/>
-    <link rel="preload" href="<?= loadCdnUrl("v2/3rdparty/notyf/notyf.css") ?>" as="style" onload="this.rel='stylesheet'"'">
+    <link rel="preload" href="<?= asset("cdn://3rdparty/fontawesome/css/all.min.css") ?>" as="style" onload="this.rel='stylesheet'"'/>
+    <link rel="preload" href="<?= asset("cdn://3rdparty/notyf/notyf.css") ?>" as="style" onload="this.rel='stylesheet'"'">
 
-    <script src="<?= loadCdnUrl("v2/3rdparty/notyf/notyf.js") ?>"></script>
-    <script src="<?= loadCdnUrl("v2/js/api.js?v=0.0.1") ?>"></script>
-    <script src="<?= loadCdnUrl("v1/js/functions.js?v=0.0.1") ?>"></script>
+    <script src="<?= asset("cdn://3rdparty/notyf/notyf.js") ?>"></script>
+    <script src="<?= asset("cdn://scripts/public/api.js") ?>"></script>
+    <script src="<?= asset("cdn://scripts/public/functions.js") ?>"></script>
 
-    <script src='<?= loadCdnUrl("v1/js/ads.js?v=0.0.1") ?>'></script>
+    <script src='<?= asset("cdn://scripts/public/ads.js") ?>'></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,14 +48,14 @@ programme cinéma châtillon, programme cinema vitré, programme cinéma, ciném
     <!-- PAGE STYLES -->
     <?php
     foreach($styles as $style){
-        echo "<link rel='stylesheet' href='".$style."'>\n";
+        echo "<link rel='stylesheet' href='".asset($style)."'>\n";
     }
     ?>
 
     <!-- PAGE SCRIPTS -->
     <?php
     foreach($scripts as $script){
-        echo "<script src='".$script."'></script>\n";
+        echo "<script src='".asset($script)."'></script>\n";
     }
     ?>
 

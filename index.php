@@ -1,12 +1,15 @@
 <?php
 
 ini_set("display_errors", 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 /*
     Exigences
 */
 
 require_once(__DIR__."/../vendor/autoload.php");
+
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__."/../");
 $dotenv->load();
@@ -29,8 +32,7 @@ function loadSettingsFromDb(){
 require_once(__DIR__."/src/tools/default.php");
 
 // Si il y a une maintenance & que l'adresse IP n'est pas whitelisté, on affiche la page de maintenance
-
-if(MAINTENANCE && !in_array($ip, WHITELISTED_IPS)){
+if(filter_var($_ENV["MAINTENANCE"], FILTER_VALIDATE_BOOLEAN) && !in_array($ip, explode(",", $_ENV["WHITELISTED_IPS"]))){
     require_once(__DIR__."/src/errors/maintenance.php");
     die;
 }
@@ -48,7 +50,15 @@ function getCurrentPath(){
     return $result;
 }
 
+function mapScriptsAndStyles($elements){
+    if($elements){
+        foreach($elements as $k=>$element){
+            $elements[$k] = asset($element);
+        }
+    }
 
+    return $elements;
+}
 
 function get($key, $return=false){
     return array_key_exists($key, PAGE) ? PAGE[$key] : $return;
@@ -69,7 +79,7 @@ function generateMenu($data){
         return [
             "url" => BASE."/".$item["url"],
             "title" => $item["title"],
-            "icon" => $item["icon"],
+            "icon" => array_key_exists("icon", $item) ? $item["icon"] : false,
             "short_name" => array_key_exists("short_name", $item) ? $item["short_name"] : false,
             "mobile" => array_key_exists("mobile", $item) ? $item["mobile"] : false,
             "accent" => array_key_exists("accent", $item) ? $item["accent"] : false,
@@ -265,15 +275,12 @@ catch (Exception $e) {
 
 define('PAGE', $pageData);
 
-if ($pageData) {
-    $file_path = __DIR__."/src/pages/".PAGE["path"];
-    if(!get("isEmpty") && !file_exists($file_path))
-    {
-        sendError(1006, array("file" => $file_path, "page" => PAGE["title"]));
-        die;
-    }
 
+
+if ($pageData) {
+    
     if(get("type") == "model" && !array_key_exists(get("slug"), SETTINGS)) return sendError(1007, array("model" => get("slug"), "page" => PAGE["title"]));
+
 
     if(get("includes", true))
     {
@@ -281,8 +288,8 @@ if ($pageData) {
 
         createHead(
             PAGE["title"],
-            get("styles", []),
-            get("scripts", []),
+            mapScriptsAndStyles(get("styles", [])),
+            mapScriptsAndStyles(get("scripts", [])),
         );
 
         require_once(__DIR__."/src/includes/header.php");
@@ -292,6 +299,15 @@ if ($pageData) {
         echo SETTINGS[get("slug")];
     }
     else if(!get("isEmpty")){
+
+        $file_path = __DIR__."/src/pages/".PAGE["path"];
+
+        if(!file_exists($file_path))
+        {
+            sendError(1006, array("file" => $file_path, "page" => PAGE["title"]));
+            die;
+        }
+
         require_once($file_path);
     }
 

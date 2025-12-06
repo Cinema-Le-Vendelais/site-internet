@@ -18,7 +18,7 @@
 
     <header>
         <div>
-            <img data-src="<?= loadCdnUrl("v2/logo.png") ?>?compress=1" class="logo lazyload" style="width: 300px;" alt="Logo">
+            <img data-src="<?= asset("cdn://images/logo.png", 1) ?>" class="logo lazyload" style="width: 300px;" alt="Logo">
             <span class="address">
                 <i class="fa-solid fa-location-dot"></i>
                 <div>
@@ -133,7 +133,7 @@
     {
         $theme = "rose";
         ?>
-        <link href=https://cdn.levendelaiscinema.fr/v2/css/themes/rose.css rel=stylesheet>
+        <link href=<?= asset("cdn://styles/themes/rose.css") ?> rel=stylesheet>
         <img src="https://cdn.levendelaiscinema.fr/proxy/https://onconormandie.fr/wp-content/uploads/2021/10/ruban-rose.png" class="octobre-rose">
         
         <?php
@@ -142,7 +142,7 @@
     {
         $theme = "halloween";
         ?>
-        <link href=https://cdn.levendelaiscinema.fr/v2/css/themes/halloween.css?v=1.1.6 rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Eater"rel=stylesheet>
+        <link href=<?= asset("cdn://styles/themes/halloween.css")?> rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Eater"rel=stylesheet>
         <div class=spider_0><div class="left eye"></div><div class="right eye"></div><span class="leg left"></span> <span class="leg left"></span> <span class="leg left"></span> <span class="leg left"></span> <span class="leg right"></span> <span class="leg right"></span> <span class="leg right"></span> <span class="leg right"></span></div><div class=spider_1><div class="left eye"></div><div class="right eye"></div><span class="leg left"></span> <span class="leg left"></span> <span class="leg left"></span> <span class="leg left"></span> <span class="leg right"></span> <span class="leg right"></span> <span class="leg right"></span> <span class="leg right"></span></div><div class=spider_2><div class="left eye"></div><div class="right eye"></div><span class="leg left"></span> <span class="leg left"></span> <span class="leg left"></span> <span class="leg left"></span> <span class="leg right"></span> <span class="leg right"></span> <span class="leg right"></span> <span class="leg right"></span></div><div class=spider_3><div class="left eye"></div><div class="right eye"></div><span class="leg left"></span> <span class="leg left"></span> <span class="leg left"></span> <span class="leg left"></span> <span class="leg right"></span> <span class="leg right"></span> <span class="leg right"></span> <span class="leg right"></span></div><div class=spider_4><div class="left eye"></div><div class="right eye"></div><span class="leg left"></span> <span class="leg left"></span> <span class="leg left"></span> <span class="leg left"></span> <span class="leg right"></span> <span class="leg right"></span> <span class="leg right"></span> <span class="leg right"></span></div><div class=spider_5><div class="left eye"></div><div class="right eye"></div><span class="leg left"></span> <span class="leg left"></span> <span class="leg left"></span> <span class="leg left"></span> <span class="leg right"></span> <span class="leg right"></span> <span class="leg right"></span> <span class="leg right"></span></div>
         <?php
     }
@@ -150,7 +150,7 @@
     {
         $theme = "noel";
         ?>
-        <link href=https://cdn.levendelaiscinema.fr/v2/css/themes/noel.css?v=1.0.1 rel=stylesheet>
+        <link href=<?= asset("cdn://styles/themes/noel.css")?> rel=stylesheet>
 
         <div class="snowflakes" aria-hidden="true">
             <div class="snowflake snowflake1"></div>

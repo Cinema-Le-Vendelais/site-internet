@@ -7,19 +7,19 @@
  * Auteur      : Liam
  * Version     : 1.0.0
  * Mise à jour : 21/10/2024
- * TODO :  Paramètres dans un meilleur format et un fichier différent
 */
 
-ini_set("display_errors", 0);
+
+
+ini_set("display_errors", 1);
+
+require_once __DIR__."/../../../vendor/autoload.php";
+
+$dotenv = Dotenv\Dotenv::createImmutable(realpath(__DIR__."/../../../"));
+$dotenv->load();
 
 // Paramètres généraux
-define("AUTHOR", "Liam CHARPENTIER");
-define("VERSION", "1.0.2");
-define("BASE", "https://".$_SERVER['SERVER_NAME']);
-
-define("MAINTENANCE", false);
-
-define("WHITELISTED_IPS", array("90.27.221.184", "2a01:cb08:90d4:8c00:8947:fb95:df0f:b2cc"));
+define("BASE", $_ENV["SCHEME"]."://".$_SERVER['SERVER_NAME']);
 
 // Récupération de l'adresse IP
 if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
@@ -68,27 +68,27 @@ function showNotification($message, $type="success"){
     echo "<script>new Notyf().$type('$message')</script>";
 }
 
-
 /**
- * Fonction qui permet de récupérer le lien complet vers un chemin CDN
- *
- * @param path $path Chemin CDN
- * @return string Retourne le chemin complet.
-*/
-function loadCdnUrl($path) {
-    $currentURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+ * Génère une URL d'asset avec version automatique (timestamp)
+ * 
+ * @param string $path Chemin relatif de l'asset (ex: /css/style.css)
+ * @return string URL avec version
+ */
+function asset($url, $compress=0) {
+    $cdnPrefix = "cdn://";
 
-    parse_str(parse_url($currentURL, PHP_URL_QUERY) ? parse_url($currentURL, PHP_URL_QUERY) : "", $queryes);
+    if (strpos($url, $cdnPrefix) === 0) {
 
+        $clean = preg_replace('/\?.*$/', '', substr($url, strlen($cdnPrefix)));
 
-    $cdnBase = "https://cdn.levendelaiscinema.fr/";
-    $url = $cdnBase.$path;
-
-    $no_cache = (isset($queryes['no-cache']) && $queryes['no-cache'] == '1') || (isset($_COOKIE['no-cache']) && $_COOKIE['no-cache'] == '1');
-    if ($no_cache) {
-        return $url . '?no_cache=1';
-    } else {
-        return $url;
-    }
+        $fullPath = __DIR__."/../../../cdn/" . $clean;
     
+        // Si le fichier existe, ajouter le timestamp de modification
+        if (file_exists($fullPath)) {
+            $version = filemtime($fullPath);
+            return str_replace("cdn://", "http://cdn.cinema.local/", $url) . '?v=' . $version. ($compress ? '&compress=1' : '');
+        }
+    }
+
+    return $url;
 }

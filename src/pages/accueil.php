@@ -233,6 +233,3 @@ if (SETTINGS["website_vacation"] == "1" ||array_key_exists("vac", $_GET)) {
         }
     }
 </style>
-
-
-<!-- TEST GITHUB -->

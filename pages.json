@@ -18,11 +18,11 @@
 
         ],
         "styles": [
-            "https://cdn.levendelaiscinema.fr/v2/css/main.css?v=0.0.8",
+            "cdn://styles/pages/main.css",
             "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css",
             "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
         ],
-        "footerScripts": ["https://cdn.levendelaiscinema.fr/v3/js/public/main.js?v=0.1.9"]
+        "footerScripts": ["cdn://scripts/pages/main.js"]
     },
     {
         "title": "Programme",
@@ -32,8 +32,8 @@
         "icon": "calendar",
         "url": "programme",
         "path": "programme.php",
-        "styles": ["https://cdn.levendelaiscinema.fr/v2/css/programme.css"],
-        "footerScripts": ["https://cdn.levendelaiscinema.fr/v3/js/public/programme.js?v=0.0.2"]
+        "styles": ["cdn://styles/pages/programme.css"],
+        "footerScripts": ["cdn://scripts/pages/programme.js"]
     },
     {
         "title": "Infos pratiques",
@@ -45,14 +45,14 @@
         "url": "infos",
         "type": "model",
         "slug": "page_infos",
-        "styles": ["https://cdn.levendelaiscinema.fr/v1/css/infos.css"]
+        "styles": ["cdn://styles/pages/infos.css"]
     },
     {
         "title": "Infos pratiques",
         "url": "infos-pratiques",
         "type": "model",
         "slug": "page_infos",
-        "styles": ["https://cdn.levendelaiscinema.fr/v1/css/infos.css"]
+        "styles": ["cdn://styles/pages/infos.css"]
     },
     {
         "title": "Portail bénévoles",
@@ -68,9 +68,9 @@
         "icon": "image",
         "url": "affiches",
         "path": "affiches.php",
-        "styles": ["https://cdn.levendelaiscinema.fr/v3/css/public/affiches.css"],
+        "styles": ["cdn://styles/pages/affiches.css"],
         "scripts": ["https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js", "https://cdn.jsdelivr.net/npm/sweetalert2@11"],
-        "footerScripts": ["https://cdn.levendelaiscinema.fr/v3/js/public/affiches.js"]
+        "footerScripts": ["cdn://scripts/pages/affiches.js"]
     },
     {
         "title": "Notre histoire",
@@ -91,7 +91,7 @@
         "url": "contacter",
         "path": "contacter.php",
         "accent": true,
-        "styles": ["https://cdn.levendelaiscinema.fr/v2/css/contact.css?v=1.0.0"]
+        "styles": ["cdn://styles/pages/contact.css"]
     },
 
     {
@@ -135,30 +135,30 @@
         "title": "Film",
         "url": "film/*",
         "path": "film.php",
-        "styles": ["https://cdn.levendelaiscinema.fr/v3/css/public/film.css?v=0.0.6"],
+        "styles": ["cdn://styles/pages/film.css"],
         "scripts": ["https://cdn.jsdelivr.net/npm/sweetalert2@11"],
-        "footerScripts": ["https://cdn.levendelaiscinema.fr/v3/js/public/film.js?v=0.1.0"]
+        "footerScripts": ["cdn://scripts/pages/film.js"]
     },
     {
         "title": "Évènement",
         "url": "event/*",
         "isEmpty": true,
-        "styles": ["https://cdn.levendelaiscinema.fr/v3/css/public/event.css"],
-        "footerScripts": ["https://cdn.levendelaiscinema.fr/v1/js/pages/event.js"]
+        "styles": ["cdn://styles/pages/event.css"],
+        "footerScripts": ["cdn://scripts/pages/event.js"]
     },
 
     {
         "title": "Inscription",
         "url": "newsletter/subscribe",
         "path": "newsletter/subscribe.php",
-        "styles": ["https://cdn.levendelaiscinema.fr/v2/css/contact.css"],
+        "styles": ["cdn://styles/pages/contact.css"],
         "scripts": ["https://challenges.cloudflare.com/turnstile/v0/api.js", "https://cdn.jsdelivr.net/npm/sweetalert2@11"]
     },
     {
         "title": "Valider",
         "url": "newsletter/validate",
         "path": "newsletter/validate.php",
-        "styles": ["https://cdn.levendelaiscinema.fr/v2/css/contact.css"],
+        "styles": ["cdn://styles/pages/contact.css"],
         "scripts": ["https://challenges.cloudflare.com/turnstile/v0/api.js"]
     },
     {

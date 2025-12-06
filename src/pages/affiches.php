@@ -9,7 +9,7 @@
  * Mise à jour : 01/03/2025
  */
 
- use PHPMailer\PHPMailer\PHPMailer;
+/* use PHPMailer\PHPMailer\PHPMailer;
 
 
 function isHCaptchaValid($code)
@@ -164,7 +164,7 @@ if (!empty($_POST) && isHCaptchaValid($_POST["h-captcha-response"]) && !empty($_
 
     sendMail($subject, $html, $to);
 
-    /* Envoyer le mail à la personne */
+    // Envoyer le mail à la personne
 
     $html = <<<EOT
         <h2>Commande d'affiches validée !</h2>
@@ -189,19 +189,19 @@ if (!empty($_POST) && isHCaptchaValid($_POST["h-captcha-response"]) && !empty($_
 
     sendMailNoRep("Commande d'affiches validée", $html, $_POST["email"]);
 }
-
+*/
 ?>
 
 
 
-<script src='https://js.hcaptcha.com/1/api.js' async defer></script>
+<!--<script src='https://js.hcaptcha.com/1/api.js' async defer></script>-->
 <h2>Vente d'affiches</h2>
 
 <div class="beta">
-    Notre nouveau système de commande d'affiches est actuellement en test. Si un problème survient, n'hésitez pas à nous contacter via webmaster@levendelaiscinema.fr !
+    Les réservations sont actuellement indisponibles. Pour commander des affiches, contactez affiches@levendelaiscinema.fr !
 </div>
 
-<details>
+<!--<details>
   <summary>Cliquez ici pour visualiser votre commande</summary>
   <div class="command-holder">
     <h3>Votre commande :</h3>
@@ -224,7 +224,7 @@ if (!empty($_POST) && isHCaptchaValid($_POST["h-captcha-response"]) && !empty($_
         <button type="button" id="commander-affiches">Commander ces affiches</button>
     </form>
 </div>
-</details>
+</details>-->
 
 
 
@@ -257,4 +257,30 @@ if (!empty($_POST) && isHCaptchaValid($_POST["h-captcha-response"]) && !empty($_
 </div>
 
 
-<div class="container"></div>
+<section class="container"></section>
+
+<style>
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 50px;
+    }
+
+    .container article{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container article h2{
+        font-size: 1em;
+    }
+
+    .container article img{
+        width: 250px;
+        height: 350px;
+    }
+</style>

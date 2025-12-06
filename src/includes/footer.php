@@ -4,7 +4,7 @@
 <?php
 if (array_key_exists("footerScripts", PAGE) && is_array(PAGE["footerScripts"])) {
     foreach (PAGE["footerScripts"] as $script) {
-        echo "<script src='" . $script . "'></script>\n";
+        echo "<script src='" . asset($script) . "'></script>\n";
     }
 }
 
@@ -67,7 +67,7 @@ if ($GLOBALS["theme"] == "halloween") {
     ?>
     <div class="foo">
         <div class="logo">
-            <img class="logo lazyload" data-src="<?= loadCdnUrl("v2/logo.png") ?>?compress=1" alt="Logo">
+            <img class="logo lazyload" data-src="<?= asset("cdn://images/logo.png", 1) ?>" alt="Logo">
             <a href="https://go.levendelaiscinema.fr/newsletter">
                 <i class="fa-solid fa-envelope fa-xl"></i>
                 S'abonner à la newsletter
@@ -178,7 +178,7 @@ if ($GLOBALS["theme"] == "halloween") {
         })
     </script>
 
-    <script src="<?= loadCdnUrl("v2/3rdparty/lazysizes/script.js") ?>"></script>
+    <script src="<?= asset("cdn://3rdparty/lazysizes/script.js") ?>"></script>
 
     </body>
 
