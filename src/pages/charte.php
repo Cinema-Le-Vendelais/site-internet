@@ -91,9 +91,9 @@
           <h2>Site web</h2>
           <div class="logo-grid">
               <div class="logo-item">
-                  <img src="https://cdn.levendelaiscinema.fr/v1/icon.png" alt="Icône du site">
+                  <img src="<?= asset("cdn://images/icon.png") ?>" alt="Icône du site">
                   <div class="download-buttons">
-                      <a href="https://cdn.levendelaiscinema.fr/v1/icon.png" download="icone-site.png" class="download-btn">Télécharger PNG</a>
+                      <a href="<?= asset("cdn://images/icon.png") ?>" download="icone-site.png" class="download-btn">Télécharger PNG</a>
                   </div>
                   <p>Icône</p>
               </div>

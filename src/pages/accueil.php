@@ -155,7 +155,7 @@ if (SETTINGS["website_vacation"] == "1" ||array_key_exists("vac", $_GET)) {
     }
 
     .main-content{
-        background: url("https://cdn.levendelaiscinema.fr/v3/backgrounds/header.png");
+        background: url("<?= asset("cdn://images/header.png") ?>");
         background-position: bottom;
         display: flex;
         flex-direction: column;
