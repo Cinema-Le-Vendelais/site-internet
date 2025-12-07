@@ -68,6 +68,11 @@ function showNotification($message, $type="success"){
     echo "<script>new Notyf().$type('$message')</script>";
 }
 
+function getRootDomain() {
+    $parts = explode('.', $_SERVER['SERVER_NAME']);
+    return count($parts) >= 2 ? implode('.', array_slice($parts, -2)) : $_SERVER['SERVER_NAME'];
+}
+
 /**
  * Génère une URL d'asset avec version automatique (timestamp)
  * 
@@ -86,7 +91,7 @@ function asset($url, $compress=0) {
         // Si le fichier existe, ajouter le timestamp de modification
         if (file_exists($fullPath)) {
             $version = filemtime($fullPath);
-            return str_replace("cdn://", "https://cdn.levendelaiscinema.fr/", $url) . '?v=' . $version. ($compress ? '&compress=1' : '');
+            return str_replace("cdn://", $_ENV["SCHEME"]."://cdn.".getRootDomain()."/", $url) . '?v=' . $version. ($compress ? '&compress=1' : '');
         }
     }
 
