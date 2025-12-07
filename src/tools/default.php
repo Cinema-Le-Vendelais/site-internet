@@ -86,7 +86,7 @@ function asset($url, $compress=0) {
         // Si le fichier existe, ajouter le timestamp de modification
         if (file_exists($fullPath)) {
             $version = filemtime($fullPath);
-            return str_replace("cdn://", "http://cdn.levendelaiscinema.fr/", $url) . '?v=' . $version. ($compress ? '&compress=1' : '');
+            return str_replace("cdn://", "https://cdn.levendelaiscinema.fr/", $url) . '?v=' . $version. ($compress ? '&compress=1' : '');
         }
     }
 
