@@ -51,6 +51,12 @@
 
     <main>
 
+        <div style="background-color:#FFFF00;padding:.5em;border-radius:16px;margin:1em 5em;">
+            <h3>Maintenance en cours</h3>
+            <p>Notre site sera en maintenance du <strong>7 au 14 décembre</strong>. Le site risque d'être dysfonctionnel ou complètement inaccessible par moments. </p>
+            <p>Nous nous excusons pour la gêne occasionnée. <a target="_blank" href="https://www.facebook.com/cinemalevendelais">Retrouvez toute notre programmation sur Facebook</a> </p>
+        </div>
+
     <?php
 
     if(SETTINGS["website_maintenance"] == "1" )
