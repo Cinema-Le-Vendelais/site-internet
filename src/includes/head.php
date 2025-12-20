@@ -45,6 +45,12 @@ programme cinéma châtillon, programme cinema vitré, programme cinéma, ciném
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <!-- SENTRY ERROR LOGGING -->
+    <script
+        src="https://js-de.sentry-cdn.com/7490a6c93b064e769b047c247e4e2654.min.js"
+        crossorigin="anonymous"
+    ></script>
+
     <!-- PAGE STYLES -->
     <?php
     foreach($styles as $style){

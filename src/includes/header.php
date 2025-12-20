@@ -13,6 +13,14 @@
         gtag('config', 'G-P5DQ1FKHBS');
 
         let notyf = new Notyf();
+
+        Sentry.onLoad(() => {
+            console.log("Sentry loaded");
+            Sentry.init({
+                dsn: "https://1ef3990d2d1cb99b997e9b60232d37d3@o4510564015013888.ingest.de.sentry.io/4510564064165968",
+                sendDefaultPii: true
+            });
+        })
     </script>
     <?php } ?>
 
