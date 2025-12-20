@@ -46,10 +46,7 @@ programme cinéma châtillon, programme cinema vitré, programme cinéma, ciném
     <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <!-- SENTRY ERROR LOGGING -->
-    <script
-        src="https://js-de.sentry-cdn.com/7490a6c93b064e769b047c247e4e2654.min.js"
-        crossorigin="anonymous"
-    ></script>
+    <script src="https://js-de.sentry-cdn.com/1ef3990d2d1cb99b997e9b60232d37d3.min.js" crossorigin="anonymous"></script>
 
     <!-- PAGE STYLES -->
     <?php
