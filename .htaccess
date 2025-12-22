@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Redirections SEO
+RewriteRule ^(robots\.txt|sitemap\.xml|favicon\.ico|browserconfig\.xml)$ seo/$1 [L]
+
+# Ancien site (Sont toujours affichés sur Bing, Ecosia, ...) - PEUT ÊTRE SUPPRIME
+RewriteRule ^category/les-tarifs https://levendelaiscinema.fr/infos [R=301,L]
+RewriteRule ^category/programme https://levendelaiscinema.fr/programme [R=301,L]
+
+# Redirection générale
+Options -Indexes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+ErrorDocument 403 src/errors/403.php
+
+RewriteRule ^(.*)$ index.php [NC,L,QSA]
