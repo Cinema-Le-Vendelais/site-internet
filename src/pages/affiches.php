@@ -254,6 +254,7 @@ if (!empty($_POST) && isHCaptchaValid($_POST["h-captcha-response"]) && !empty($_
 
 <div class="ctn">
     <span class="legend">Affiche en rouleau</span>
+    <button id="show-command">Afficher votre panier<span>0</span></button>
 </div>
 
 
@@ -282,5 +283,37 @@ if (!empty($_POST) && isHCaptchaValid($_POST["h-captcha-response"]) && !empty($_
     .container article img{
         width: 250px;
         height: 350px;
+    }
+
+    #show-command{
+        position: relative;
+        padding: 10px;
+        border-radius: 8px;
+        background: darkblue;
+        border: none;
+        font-family: var(--font-family);
+        font-weight: var(--font-weight);
+        cursor: pointer;
+        transition: all .5s;
+        color: white;
+    }
+
+    #show-command:hover{
+        background: blue;
+    }
+
+    #show-command span{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: -10px;
+        right: -10px;
+        width: 20px;
+        height: 20px;
+        color: white;
+        background: red;
+        padding: .1rem;
+        border-radius: 50%;
     }
 </style>
