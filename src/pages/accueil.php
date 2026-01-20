@@ -146,90 +146,10 @@ if (SETTINGS["website_vacation"] == "1" ||array_key_exists("vac", $_GET)) {
         <div class="soutiens"></div>
     </div>
 
-</div>
-
-<style>
-    main{
-        margin: unset !important;
-        gap: 0;
-    }
-
-    .main-content{
-        background: url("<?= asset("cdn://images/header.png") ?>");
-        background-position: bottom;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 20px;
-        padding-left: 5rem;
-        padding-right: 5rem;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    .main-header, .main-footer{
-        padding: 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .main-header #mise-en-avant{
-        width: 70%;
-    }
-
-    .main-header{
-        background: var(--accent-color);
-    }
-
-    .main-footer{
-        background: var(--section-color);
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .main-footer #splide01{
-        width: 70%;
-    }
-
-    footer{
-        background: #111;
-    }
-
-    header{
-        border-radius: 0;
-    }
-
-    .dates-placeholder .swiper-slide{
-        min-height: 90px;
-        min-width: 90px;
-    }
-
-    #dayname{
-        color: white;
-    }
-
-    #dayname span{
-        color: var(--accent-color);
-        background: whitesmoke
-    }
-
-    .movie h2, .movie .infos *:not(.categorie){
-        color: white
-    }
-
-    @media screen and (max-width: 1080px) {
-        .main-footer #splide01, .main-header #mise-en-avant{
-            width: 100%;
-        }
-
+    <style>
         .main-content{
-            padding-left: .5rem;
-            padding-right: .5rem;
+            background: url("<?= asset("cdn://images/header.png") ?>");
         }
+    </style>
 
-        .vacations{
-            margin: 10px !important
-        }
-    }
-</style>
+</div>
