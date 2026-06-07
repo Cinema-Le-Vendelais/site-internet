@@ -209,14 +209,9 @@ function loadWithoutRedis(){
 try{
     $connected = $redis->connect($_ENV["REDIS_HOST"], $_ENV["REDIS_PORT"], 0.1);
 
-    if (!$connected) {
-        loadWithoutRedis();
-    }
-    else{
+    if ($connected) {
         $redis->auth($_ENV["REDIS_PASSWORD"]);
     }
-
-    
 
     if ($connected && $redis->ping() == '+PONG') {
         // Charger les pages
