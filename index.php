@@ -207,7 +207,8 @@ function loadWithoutRedis(){
 
 
 try{
-    $connected = $redis->connect($_ENV["REDIS_HOST"], $_ENV["REDIS_PORT"], 0.1);
+    $redis->setOption(Redis::OPT_SCAN, Redis::SCAN_RETRY);
+    $connected = @$redis->connect($_ENV["REDIS_HOST"], $_ENV["REDIS_PORT"], 0.1);
 
     if ($connected) {
         $redis->auth($_ENV["REDIS_PASSWORD"]);
