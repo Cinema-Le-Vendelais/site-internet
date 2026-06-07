@@ -204,11 +204,21 @@ function loadWithoutRedis(){
 
 //loadWithoutRedis();
 
-try{
-    $redis->connect($_ENV["REDIS_HOST"], $_ENV["REDIS_PORT"], 1);
-    $redis->auth($_ENV["REDIS_PASSWORD"]);
 
-    if ($redis->ping() == '+PONG') {
+
+try{
+    $connected = $redis->connect($_ENV["REDIS_HOST"], $_ENV["REDIS_PORT"], 0.1);
+
+    if (!$connected) {
+        loadWithoutRedis();
+    }
+    else{
+        $redis->auth($_ENV["REDIS_PASSWORD"]);
+    }
+
+    
+
+    if ($connected && $redis->ping() == '+PONG') {
         // Charger les pages
         if ($redis->exists("levendel-pages")) {
             $pages = json_decode($redis->get('levendel-pages'), true);
